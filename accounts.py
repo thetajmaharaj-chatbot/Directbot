@@ -35,6 +35,19 @@ def main():
     with sync_playwright() as pw:
         b=pw.chromium.launch(headless=True); page=b.new_page()
         page.goto(a.url,wait_until="domcontentloaded",timeout=45000)
+        # Insly: homepage is discovery; follow the explicit free listing CTA first.
+        if h == "insly.co.za":
+            moved=False
+            for label in ["List Your Organization","Add business","Claim your business","Start getting customers"]:
+                link=page.get_by_role("link",name=re.compile(label,re.I))
+                if link.count():
+                    link.first.click()
+                    page.wait_for_load_state("domcontentloaded")
+                    moved=True
+                    break
+            if not moved:
+                d[h]={"status":"MANUAL_REVIEW","url":a.url,"reason":"Insly free-listing CTA not found"}
+                save(d); print("MANUAL_REVIEW: Insly listing CTA not found"); raise SystemExit(2)
         body=page.locator("body").inner_text().lower()
         if any(x in body for x in CAPTCHA):
             d[h]={"status":"MANUAL_CAPTCHA","url":a.url}; save(d); print("STOP: CAPTCHA"); return
