@@ -2,6 +2,7 @@
 import argparse, re, yaml
 from playwright.sync_api import sync_playwright
 from ledger import seen, record
+from adapters import run_adapter
 
 CAPTCHA=("captcha","recaptcha","hcaptcha","turnstile")
 PAYMENT=("checkout","credit card","payment","pay now","subscribe")
@@ -44,6 +45,10 @@ def main():
             record(a.url,"MANUAL_CAPTCHA"); print("STOP: CAPTCHA"); return
         if any(x in body for x in PAYMENT):
             record(a.url,"PAYMENT_REVIEW"); print("STOP: payment/package choice"); return
+        adapter=run_adapter(page,a.url,p)
+        if not adapter["ready"]:
+            record(a.url,"MANUAL_REVIEW",adapter["reason"])
+            print("STOP:",adapter["reason"]); return
         n=fill(page,p)
         page.screenshot(path="output/submission-preview.png",full_page=True)
         if not a.commit:
