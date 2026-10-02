@@ -61,3 +61,22 @@ targets:
     region: KZN South Coast
     lane: PAID
     note: paid listing - never auto-purchase
+
+  - name: Seek A Biz
+    url: https://seekabiz.co.za/
+    priority: 90
+    region: South Africa
+    lane: AUTO
+    note: free business directory registration
+  - name: Insly South Africa
+    url: https://www.insly.co.za/
+    priority: 94
+    region: KwaZulu-Natal
+    lane: AUTO
+    note: free add-business flow with South Coast city coverage
+  - name: Tender Bulletins Business Profile
+    url: https://tenderbulletins.co.za/
+    priority: 93
+    region: South Africa
+    lane: AUTO
+    note: free business profile with subcontracting and JV exposure
