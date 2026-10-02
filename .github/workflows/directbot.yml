@@ -1,4 +1,4 @@
-name: Directbot Directory Audit
+name: Directbot Long-tail Directory Engine
 
 on:
   workflow_dispatch:
@@ -9,8 +9,9 @@ permissions:
   contents: write
 
 jobs:
-  audit:
+  discover-and-audit:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -18,11 +19,14 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
-      - run: python directbot.py
-      - name: Save audit results
+      - name: Discover long-tail directories
+        run: python discovery.py
+      - name: Audit seeded directories
+        run: python directbot.py
+      - name: Save discovery and audit state
         run: |
           git config user.name "directbot"
           git config user.email "actions@users.noreply.github.com"
-          git add output/
-          git diff --cached --quiet || git commit -m "bot: update directory audit"
+          git add data/ output/ || true
+          git diff --cached --quiet || git commit -m "bot: refresh long-tail directory intelligence"
           git push
