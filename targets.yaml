@@ -1,25 +1,63 @@
 targets:
   - name: South Coast Business Directory
-    url: https://www.southcoastbusinessdirectory.co.za/south-coast-business-directory-advertise-free/?wpbdp_view=submit_listing
+    url: https://southcoastbusinessdirectory.co.za/
     priority: 100
     region: KZN South Coast
+    lane: AUTO
   - name: Oink KZN South Coast
     url: https://kznsouthcoast.oink.co.za/
     priority: 100
     region: KZN South Coast
-  - name: South Coast Explore
-    url: https://southcoastexplore.co.za/add-listing/
-    priority: 95
-    region: KZN South Coast
+    lane: AUTO
+  - name: Destinali
+    url: https://destinali.com/free-business-listing-south-africa
+    priority: 92
+    region: South Africa
+    lane: AUTO
+  - name: Small Businesses South Africa
+    url: https://smallbusinesses.co.za/
+    priority: 91
+    region: South Africa
+    lane: AUTO
+  - name: Easy Directory SA
+    url: https://www.easydirectorysa.co.za/why-advertise-with-easy-directory-sa/
+    priority: 90
+    region: South Africa
+    lane: AUTO
+  - name: nichemarket
+    url: https://www.nichemarket.co.za/
+    priority: 89
+    region: South Africa
+    lane: AUTO
+  - name: Zibra
+    url: https://zibra.co.za/free-business-advertising-platform
+    priority: 88
+    region: South Africa
+    lane: AUTO
+  - name: Brownbook South Africa
+    url: https://www.brownbook.net/country-selector/ZA
+    priority: 86
+    region: South Africa
+    lane: AUTO
   - name: The Business Directory
     url: https://www.thebusinessdirectory.co.za/add-listing/listings/
     priority: 85
     region: South Africa
+    lane: MANUAL
+    note: exact street address required
   - name: SA Business Directory
     url: https://www.sabusinessdirectory.co.za/select-directory-package/
     priority: 80
     region: South Africa
+    lane: REVIEW
   - name: Entrepo
     url: https://www.entrepo.co.za/business-directory
     priority: 75
     region: South Africa
+    lane: REVIEW
+  - name: South Coast Explore
+    url: https://southcoastexplore.co.za/add-listing/
+    priority: 40
+    region: KZN South Coast
+    lane: PAID
+    note: paid listing - never auto-purchase
