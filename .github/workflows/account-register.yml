@@ -1,0 +1,31 @@
+name: Directbot Account Register
+on:
+  workflow_dispatch:
+    inputs:
+      registration_url:
+        description: "Directory registration URL"
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: playwright install --with-deps chromium
+      - name: Register account
+        env:
+          DIRECTBOT_ACCOUNT_PASSWORD: ${{ secrets.DIRECTBOT_ACCOUNT_PASSWORD }}
+        run: python accounts.py "${{ inputs.registration_url }}" --commit
+      - name: Save non-secret account state
+        run: |
+          git config user.name "directbot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/account-ledger.json
+          git diff --cached --quiet || git commit -m "bot: update directory account state"
+          git push
