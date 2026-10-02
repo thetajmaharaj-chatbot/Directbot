@@ -1,0 +1,25 @@
+targets:
+  - name: South Coast Business Directory
+    url: https://www.southcoastbusinessdirectory.co.za/south-coast-business-directory-advertise-free/?wpbdp_view=submit_listing
+    priority: 100
+    region: KZN South Coast
+  - name: Oink KZN South Coast
+    url: https://kznsouthcoast.oink.co.za/
+    priority: 100
+    region: KZN South Coast
+  - name: South Coast Explore
+    url: https://southcoastexplore.co.za/add-listing/
+    priority: 95
+    region: KZN South Coast
+  - name: The Business Directory
+    url: https://www.thebusinessdirectory.co.za/add-listing/listings/
+    priority: 85
+    region: South Africa
+  - name: SA Business Directory
+    url: https://www.sabusinessdirectory.co.za/select-directory-package/
+    priority: 80
+    region: South Africa
+  - name: Entrepo
+    url: https://www.entrepo.co.za/business-directory
+    priority: 75
+    region: South Africa
