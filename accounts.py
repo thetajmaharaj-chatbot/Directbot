@@ -54,7 +54,7 @@ def main():
             x=page.get_by_role("button",name=re.compile(label,re.I))
             if x.count():btn=x.first;break
         if not btn:
-            d[h]={"status":"MANUAL_REVIEW","url":a.url,"reason":"no unambiguous registration button"};save(d);return
+            d[h]={"status":"MANUAL_REVIEW","url":a.url,"reason":"no unambiguous registration button"};save(d);print("MANUAL_REVIEW: no unambiguous registration button"); raise SystemExit(2)
         btn.click();page.wait_for_timeout(3000)
         text=page.locator("body").inner_text().lower()
         status="VERIFICATION_PENDING" if any(x in text for x in VERIFY) else "REGISTERED"
