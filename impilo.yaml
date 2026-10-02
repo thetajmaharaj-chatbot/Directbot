@@ -1,0 +1,25 @@
+business:
+  name: "Impilo Drilling"
+  phone: "083 419 2100"
+  phone_intl: "+27 83 419 2100"
+  email: "info@impilodrilling.co.za"
+  website: "https://impilodrilling.co.za"
+  city: "Port Shepstone"
+  province: "KwaZulu-Natal"
+  country: "South Africa"
+  service_area: "Port Shepstone and the KwaZulu-Natal South Coast"
+  categories:
+    - Borehole Drilling
+    - Water Services
+    - Drilling Contractors
+    - Pump Installation
+    - Water Purification
+  services:
+    - Borehole drilling
+    - Borehole divining
+    - Geophysical survey
+    - Pump installation
+    - Water tank installation
+    - Water testing
+    - Water purification
+  description: "Impilo Drilling provides professional borehole drilling and complete water solutions in Port Shepstone and across the KwaZulu-Natal South Coast, including divining, geophysical surveys, pump installation, water tank installation, water testing and water purification."
