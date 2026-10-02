@@ -4,10 +4,11 @@ business:
   phone_intl: "+27 83 419 2100"
   email: "info@impilodrilling.co.za"
   website: "https://impilodrilling.co.za"
-  city: "Port Shepstone"
+  city: "Shelly Beach"
   province: "KwaZulu-Natal"
+  postal_code: "4276"
   country: "South Africa"
-  service_area: "Port Shepstone and the KwaZulu-Natal South Coast"
+  service_area: "Shelly Beach, Port Shepstone and the KwaZulu-Natal South Coast"
   categories:
     - Borehole Drilling
     - Water Services
