@@ -1,0 +1,5 @@
+.env
+.env.*
+secrets.*
+output/account-preview.png
+output/submission-preview.png
